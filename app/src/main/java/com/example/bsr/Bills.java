@@ -46,8 +46,8 @@ public class Bills extends AppCompatActivity {
         add_btn.setOnClickListener(view -> {
             Intent intent = new Intent(Bills.this, AddBills.class);
             startActivity(intent);
-            //After we add a bill, we want to go to dashboard
-            finish();
+            //We repopulate with the fresh data
+            retrieveBills();
         });
 
         arrow = findViewById(R.id.image_back);
@@ -71,8 +71,9 @@ public class Bills extends AppCompatActivity {
                     String description = result.get("description").toString();
                     String amount = result.get("amount").toString();
                     String date = result.get("date").toString();
+                    String id = result.getId();
 
-                    bills_list.add(new Billable(description, date, amount));
+                    bills_list.add(new Billable(description, date, amount, id));
                     setAdapter();
                 }
             }
@@ -80,7 +81,7 @@ public class Bills extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        billableAdapter adapter = new billableAdapter(new ArrayList(bills_list));
+        billableAdapter adapter = new billableAdapter(new ArrayList(bills_list), "bills", this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(layoutManager);

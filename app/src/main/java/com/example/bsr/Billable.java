@@ -1,20 +1,19 @@
 package com.example.bsr;
 
 
-import java.util.List;
-import java.util.Map;
-
 public class Billable {
 
     private String description;
     private String date;
     private String amount;
+    private String id;
 
 
-    public Billable(String description, String date, String amount) {
+    public Billable(String s, String description, String date, String amount) {
         this.description = description;
         this.date = this.date;
         this.amount = this.amount;
+        this.id = id;
     }
 
 
@@ -30,6 +29,9 @@ public class Billable {
         return amount;
     }
 
+    public String getId(){
+        return id;
+    }
 
 }
 

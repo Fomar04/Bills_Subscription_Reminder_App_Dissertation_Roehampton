@@ -5,27 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/gradient">
+    android:background="@drawable/cut_card_background">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="10dp"
         android:src="@drawable/logo_transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="1dp"
         android:fontFamily="@font/calistoga"
-        android:text="BS Reminder"
+        android:text="@string/bs_reminder"
         android:textAlignment="center"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,9 +37,9 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="1dp"
         android:fontFamily="@font/antic"
-        android:text="Always one step ahead!"
+        android:text="@string/always_one_step_ahead"
         android:textAlignment="center"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"

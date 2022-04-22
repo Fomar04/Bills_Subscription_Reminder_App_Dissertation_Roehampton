@@ -35,34 +35,19 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@id/info"
-                android:hint="@string/description"
+                android:hint="Title"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginBottom="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/addBDescription"
+                    android:id="@+id/addSDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="5dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addDate"
-        android:text="Select Date"
-        android:textSize="15sp"
-        android:fontFamily="@font/antic"/>
-
-    </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -76,15 +61,31 @@
                     android:id="@+id/addBAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="10dp"
-                    android:inputType="number" />
+                    android:drawablePadding="10dp"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addDate"
+                    android:text="Select Date"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/antic"
+                    android:textColor="#000000"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
 
 
                 <TextView

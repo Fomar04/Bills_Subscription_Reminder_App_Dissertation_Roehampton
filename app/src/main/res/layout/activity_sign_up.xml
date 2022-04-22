@@ -10,24 +10,27 @@
     android:padding="20dp">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_transparent" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_transparent"
+        android:contentDescription="@string/logo_logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome"
-        android:textSize="40sp"
+        android:text="@string/welcome"
+        android:textSize="35sp"
         android:fontFamily="@font/calistoga"
         android:layout_marginTop="-20dp"
-        android:textColor="#000" />
+        android:textColor="#000"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sing Up to start your journey!"
-        android:textSize="18sp" />
+        android:text="@string/sing_up_to_start_your_journey"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/antic"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,21 +44,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             android:id="@+id/name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/reg_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Username"
+            android:hint="@string/username"
             app:counterMaxLength="15"
             android:id="@+id/username"
             android:layout_marginTop="10dp">
@@ -72,7 +75,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -87,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:hint="Password"
+            android:hint="@string/password"
             android:id="@+id/password"
             app:passwordToggleEnabled="true"
             android:layout_marginTop="10dp">
@@ -105,9 +108,11 @@
             android:layout_height="wrap_content"
             android:background="#040404"
             android:backgroundTint="#0B0B0B"
-            android:text="Go"
+            android:text="@string/sign_up"
             android:textColor="#fff"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/antic"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

@@ -32,7 +32,7 @@ public class AddBills extends AppCompatActivity {
 
 
     private FirebaseFirestore db = Session.db;
-    ImageView arrow;
+    ImageView arrow, addNotify;
 
     Button submit;
 
@@ -50,35 +50,40 @@ public class AddBills extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_add_bills);
 
-        description = findViewById(R.id.addBDescription);
+        description = findViewById(R.id.addSDescription);
         billDate = findViewById(R.id.addDate);
         amount = findViewById(R.id.addBAmount);
         submit = findViewById(R.id.addSSubmit);
+        addNotify = findViewById(R.id.addBtnNot);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+        addNotify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddBills.this,AddNotify.class);
+                startActivity(intent);
+            }
+        });
+
         billDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        AddBills.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        setListener,year,month,day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
+                        AddBills.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month+1;
+                        String date = day+"/"+month+"/"+year;
+                        billDate.setText(date);
+                    }
+                }, year, month, day);
+                        datePickerDialog.show();
             }
         });
-
-        setListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = day+"/"+month+"/"+year;
-                billDate.setText(date);
-            }
-        };
 
         submit.setOnClickListener(view -> {
 

@@ -43,7 +43,7 @@ public class Subscriptions extends AppCompatActivity {
             startActivity(intent);
 
             //After we add a subscription, we want to go to dashboard
-            finish();
+            retrieveBooks();
         });
 
         arrow = findViewById(R.id.image_back);
@@ -67,16 +67,16 @@ public class Subscriptions extends AppCompatActivity {
                     String description = result.get("description").toString();
                     String amount = result.get("amount").toString();
                     String date = result.get("date").toString();
-
-                    subscriptions_list.add(new Billable(description, date, amount));
+                    String id = result.getId();
+                    subscriptions_list.add(new Billable(description, date, amount, id));
                     setAdapter();
-                }
+                                    }
             }
         });
     }
 
     private void setAdapter() {
-        billableAdapter adapter = new billableAdapter(new ArrayList(subscriptions_list));
+        billableAdapter adapter = new billableAdapter(new ArrayList(subscriptions_list),"subscriptions",this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(layoutManager);
