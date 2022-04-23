@@ -36,7 +36,6 @@ public class AddBills extends AppCompatActivity {
 
     Button submit;
 
-
     TextInputEditText description, amount;
 
     TextView billDate;
@@ -50,7 +49,7 @@ public class AddBills extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_add_bills);
 
-        description = findViewById(R.id.addSDescription);
+        description = findViewById(R.id.addBDescription);
         billDate = findViewById(R.id.addDate);
         amount = findViewById(R.id.addBAmount);
         submit = findViewById(R.id.addSSubmit);

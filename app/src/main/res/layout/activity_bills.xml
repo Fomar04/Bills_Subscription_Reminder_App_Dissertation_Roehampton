@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/cut_card_background"
     tools:context=".Bills">
 
@@ -12,29 +11,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:src="@drawable/ic_arrow_back_" />
+        android:src="@drawable/ic_arrow_back_"
+        android:contentDescription="@string/back_arrow" />
 
     <TextView
+        android:id="@+id/text_sub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/text_bills"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/image_back"
+        android:fontFamily="@font/antic"
+        android:padding="5dp"
         android:text="@string/my_bills"
         android:textColor="#000000"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:fontFamily="@font/antic"
-        android:padding="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@id/image_back" />
+        tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/billsRecyclerView"
+        android:id="@+id/rvBills"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_back"
-        android:layout_marginTop="0dp"
-        android:nestedScrollingEnabled="true"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:nestedScrollingEnabled="true" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_btn"
@@ -44,9 +43,8 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"
         android:src="@drawable/ic_add"
-        android:background="#ffffff"
-        android:backgroundTint="#ffffff" />
+        android:backgroundTint="#ffffff"
+        android:contentDescription="@string/btn_add" />
 
 </RelativeLayout>
-
 

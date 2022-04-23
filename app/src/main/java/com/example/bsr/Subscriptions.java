@@ -32,14 +32,14 @@ public class Subscriptions extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_subscriptions);
 
-        recyclerView = findViewById(R.id.subscriptionsRecyclerView);
+        recyclerView = findViewById(R.id.rvSubscriptions);
 
         subscriptions_list = new ArrayList<>();
 
         add_btn = findViewById(R.id.add_btn);
 
         add_btn.setOnClickListener(view -> {
-            Intent intent = new Intent(this, AddSubscriptions.class);
+            Intent intent = new Intent(Subscriptions.this, AddSubscriptions.class);
             startActivity(intent);
 
             //After we add a subscription, we want to go to dashboard
@@ -49,7 +49,7 @@ public class Subscriptions extends AppCompatActivity {
         arrow = findViewById(R.id.image_back);
 
         arrow.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Dashboard.class);
+            Intent intent = new Intent(Subscriptions.this, Dashboard.class);
             startActivity(intent);
 
         });
@@ -64,11 +64,11 @@ public class Subscriptions extends AppCompatActivity {
                 for (DocumentSnapshot result : Objects.requireNonNull(task.getResult())
                 ) {
 
-                    String description = result.get("description").toString();
+                    String provider = result.get("provider").toString();
                     String amount = result.get("amount").toString();
                     String date = result.get("date").toString();
-                    String id = result.getId();
-                    subscriptions_list.add(new Billable(description, date, amount, id));
+
+                    subscriptions_list.add(new Billable(provider, date, amount));
                     setAdapter();
                                     }
             }

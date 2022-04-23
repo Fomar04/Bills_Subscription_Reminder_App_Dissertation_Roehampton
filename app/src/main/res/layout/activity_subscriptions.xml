@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cut_card_background"
-    tools:context=".Bills">
+    tools:context=".Subscriptions">
 
     <ImageView
         android:id="@+id/image_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:src="@drawable/ic_arrow_back_" />
+        android:src="@drawable/ic_arrow_back_"
+        android:contentDescription="@string/back_arrow" />
 
     <TextView
         android:id="@+id/text_sub"
@@ -21,13 +22,14 @@
         android:layout_toEndOf="@id/image_back"
         android:fontFamily="@font/antic"
         android:padding="5dp"
-        android:text="My Subscriptions"
+        android:text="@string/my_subscriptions"
         android:textColor="#000000"
         android:textSize="32sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/subscriptionsRecyclerView"
+        android:id="@+id/rvSubscriptions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_back"
@@ -41,6 +43,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"
         android:src="@drawable/ic_add"
-        android:backgroundTint="#ffffff" />
+        android:backgroundTint="#ffffff"
+        android:contentDescription="@string/btn_add" />
 
 </RelativeLayout>

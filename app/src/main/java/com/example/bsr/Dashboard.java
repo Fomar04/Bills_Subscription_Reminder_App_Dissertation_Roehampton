@@ -37,16 +37,13 @@ public class Dashboard extends AppCompatActivity {
 
         });
 // I need to make a class for log out
-        cardLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
+        cardLogOut.setOnClickListener((View view) -> {
+            FirebaseAuth.getInstance().signOut();
 
-                //When we exit we don't want data to persist
-                Session.authenticatedUser = null;
-                Session.userData = null;
-               finish();
-            }
+            //When we exit we don't want data to persist
+            Session.authenticatedUser = null;
+            Session.userData = null;
+           finish();
         });
 
         cardChart.setOnClickListener(view -> {

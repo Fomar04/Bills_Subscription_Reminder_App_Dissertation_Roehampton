@@ -2,8 +2,11 @@
   <library name="Gradle: io.grpc:grpc-android:1.44.1@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4ef1537be2f717cdb1b4fb00fc0cf030/jetified-grpc-android-1.44.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4ae0b6bf6251e8a4eb8a798dc570380/jetified-grpc-android-1.44.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4ae0b6bf6251e8a4eb8a798dc570380/jetified-grpc-android-1.44.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d5b77c8f00ce0177641ecd0a9e8757f2/jetified-grpc-android-1.44.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/493945cfa5c939319d0a10e33abfb3ec/jetified-grpc-android-1.44.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a51b6f90bb216cce0460e0f52a35344e/jetified-grpc-android-1.44.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4ae0b6bf6251e8a4eb8a798dc570380/jetified-grpc-android-1.44.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d4ae0b6bf6251e8a4eb8a798dc570380/jetified-grpc-android-1.44.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

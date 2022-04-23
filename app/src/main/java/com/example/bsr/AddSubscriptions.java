@@ -62,21 +62,17 @@ public class AddSubscriptions extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        AddSubscriptions.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        setListener,year,month,day);
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        AddSubscriptions.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month = month+1;
+                        String date = day+"/"+month+"/"+year;
+                        billDate.setText(date);
+                    }
+                }, year, month, day);
                 datePickerDialog.show();
             }
         });
-
-        setListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = day+"/"+month+"/"+year;
-                billDate.setText(date);
-            }
-        };
 
         submit.setOnClickListener(view -> {
             String s_description = description.getText().toString().trim();

@@ -39,7 +39,7 @@ public class Bills extends AppCompatActivity {
 
         bills_list = new ArrayList<>();
 
-        recyclerView = findViewById(R.id.billsRecyclerView);
+        recyclerView = findViewById(R.id.rvBills);
 
         add_btn = findViewById(R.id.add_btn);
 
@@ -73,7 +73,8 @@ public class Bills extends AppCompatActivity {
                     String date = result.get("date").toString();
                     String id = result.getId();
 
-                    bills_list.add(new Billable(description, date, amount, id));
+
+                    bills_list.add(new Billable(description, date, amount));
                     setAdapter();
                 }
             }

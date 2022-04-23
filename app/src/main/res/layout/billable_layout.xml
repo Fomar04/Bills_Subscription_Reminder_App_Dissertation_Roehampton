@@ -5,69 +5,58 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
             android:padding="40dp">
-
+                
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/image_bills"
+                    android:src="@drawable/ic_payments"
+                    android:contentDescription="@string/img_pay" />
 
                 <TextView
                     android:id="@+id/billableDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:text="@string/provider"
                     android:paddingTop="10dp"
                     android:textColor="#000000"
-                    android:textSize="20sp"
-                    />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="40dp">
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_toEndOf="@id/image_bills"
+                    android:layout_marginStart="10dp"/>
 
                 <TextView
-                    android:id="@+id/billableDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:paddingTop="15dp"
-                    android:textColor="#000000"
-                    android:textSize="10sp"
-
-                    />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="40dp">
-
-        <TextView
                     android:id="@+id/billableAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:paddingTop="10dp"
+                    android:text="@string/amount"
                     android:textColor="#000000"
-                    android:textSize="10sp"/>
-        </RelativeLayout>
-        </LinearLayout>
+                    android:textSize="20sp"
+                    android:layout_toEndOf="@id/image_bills"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="40dp"/>
+
+                <TextView
+                    android:id="@+id/billableDate"
+                    android:text="@string/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:layout_toEndOf="@id/image_bills"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="70dp"/>
+
+</RelativeLayout>
 
 </androidx.cardview.widget.CardView>

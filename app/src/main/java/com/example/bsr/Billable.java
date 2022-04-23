@@ -9,11 +9,16 @@ public class Billable {
     private String id;
 
 
+
     public Billable(String s, String description, String date, String amount) {
         this.description = description;
-        this.date = this.date;
-        this.amount = this.amount;
+        this.date = date;
+        this.amount = amount;
         this.id = id;
+
+    }
+
+    public Billable( String provider, String date, String amount) {
     }
 
 
@@ -29,9 +34,10 @@ public class Billable {
         return amount;
     }
 
-    public String getId(){
+    public String getId() {
         return id;
     }
-
 }
+
+
 
