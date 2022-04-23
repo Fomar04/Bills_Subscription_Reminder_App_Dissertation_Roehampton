@@ -53,16 +53,7 @@ public class billableAdapter extends RecyclerView.Adapter<billableAdapter.Billab
         holder.date.setText(date);
         holder.amount.setText(amount);
 
-        holder.itemView.setOnClickListener(view -> {
-            Context context = view.getContext();
 
-            Intent intent = new Intent(context, Dashboard.class);
-            intent.putExtra("description", description);
-            intent.putExtra("date", date);
-            intent.putExtra("amount", amount);
-
-            startActivity(context, intent, null);
-        });
     }
 
     @Override
@@ -84,7 +75,6 @@ public class billableAdapter extends RecyclerView.Adapter<billableAdapter.Billab
             itemView.setOnLongClickListener(view -> {
                 //Log.d("Tagggg", billable_list.get(getAdapterPosition()).toString());
 
-                EditText resetMail = new EditText(view.getContext());
                 AlertDialog.Builder deleteDialog = new AlertDialog.Builder(view.getContext());
                 deleteDialog.setTitle("Delete from list");
                 deleteDialog.setMessage("Are you sure you want to delete this from the list?.");
@@ -93,18 +83,25 @@ public class billableAdapter extends RecyclerView.Adapter<billableAdapter.Billab
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
+                        try {
 
-                       Session.db.getInstance().collection(collection_name).document(billable_list.get(getAdapterPosition()).getId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                           public void onSuccess(Void aVoid) {
-                               Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
+                            Log.d("Tagdsfsdfdsf", collection_name);
 
-                               billable_list.remove(getAdapterPosition());
-                               notifyDataSetChanged();
-                            }
-                        })
-                                .addOnFailureListener(e -> Toast.makeText(context, "Something went wrong, please try again", Toast.LENGTH_LONG).show());;
+                            Session.db.getInstance().collection(collection_name).document(billable_list.get(getAdapterPosition()).getId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
 
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
+
+                                    billable_list.remove(getAdapterPosition());
+
+                                    notifyDataSetChanged();
+
+                                }
+                            }).addOnFailureListener(e -> Toast.makeText(context, "Something went wrong, please try again", Toast.LENGTH_LONG).show());
+                        }catch(Exception e){
+                            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 });

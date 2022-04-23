@@ -10,17 +10,13 @@ public class Billable {
 
 
 
-    public Billable(String s, String description, String date, String amount) {
+    public Billable( String description, String date, String amount, String id) {
         this.description = description;
         this.date = date;
         this.amount = amount;
         this.id = id;
 
     }
-
-    public Billable( String provider, String date, String amount) {
-    }
-
 
     public String getDescription() {
         return description;

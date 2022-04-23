@@ -43,7 +43,7 @@ public class Subscriptions extends AppCompatActivity {
             startActivity(intent);
 
             //After we add a subscription, we want to go to dashboard
-            retrieveBooks();
+            retrieveSubscriptions();
         });
 
         arrow = findViewById(R.id.image_back);
@@ -54,23 +54,24 @@ public class Subscriptions extends AppCompatActivity {
 
         });
 
-        retrieveBooks();
+        retrieveSubscriptions();
     }
 
-    private void retrieveBooks() {
-        
+    private void retrieveSubscriptions() {
+
         db.getInstance().collection("subscriptions").whereEqualTo("user_name", Session.userData.get("username")).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (DocumentSnapshot result : Objects.requireNonNull(task.getResult())
                 ) {
 
-                    String provider = result.get("provider").toString();
+                    String description = result.get("description").toString();
                     String amount = result.get("amount").toString();
                     String date = result.get("date").toString();
+                    String id = result.getId().toString();
 
-                    subscriptions_list.add(new Billable(provider, date, amount));
+                    subscriptions_list.add(new Billable(description, date, amount, id));
                     setAdapter();
-                                    }
+                }
             }
         });
     }
