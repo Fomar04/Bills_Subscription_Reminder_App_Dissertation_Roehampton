@@ -37,7 +37,7 @@ public class AddNotify extends AppCompatActivity implements DatePickerDialog.OnD
          setContentView(R.layout.activity_add_notify);
          Button notify = findViewById(R.id.btn_addNewNotify);
          et_title = findViewById(R.id.et_title);
-       //  et_content = findViewById(R.id.et_content);
+
 
          arrow = findViewById(R.id.image_back);
 

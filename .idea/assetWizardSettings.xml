@@ -315,8 +315,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_payments" />
-                            <entry key="sourceFile" value="C:\Users\flori\AndroidStudioProjects\BSR" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_bar_chart" />
+                            <entry key="sourceFile" value="C:\Users\flori\OneDrive\Desktop\dissertation\design app\bar-chart.svg" />
                           </map>
                         </option>
                       </PersistentState>
