@@ -20,10 +20,10 @@
         android:id="@+id/logo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/calistoga"
+        android:fontFamily="@font/archivo_black"
         android:text="@string/hello_there_welcome_back"
-        android:textColor="#000"
-        android:textSize="25sp" />
+        android:textColor="#000000"
+        android:textSize="23sp"/>
 
     <TextView
         android:id="@+id/slogan_name"
@@ -31,7 +31,9 @@
         android:layout_height="wrap_content"
         android:text="@string/sign_in_to_continue"
         android:textSize="18sp"
-        android:fontFamily="@font/antic"/>
+        android:fontFamily="@font/antic"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
 
 
     <LinearLayout
@@ -73,7 +75,7 @@
 
         <TextView
             android:id="@+id/loginForgotPass"
-            android:layout_width="110dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_margin="5dp"
@@ -82,7 +84,8 @@
             android:text="@string/forget_password"
             android:textColor="#000"
             android:textStyle="bold"
-            android:fontFamily="@font/antic"/>
+            android:fontFamily="@font/antic"
+            android:textSize="16sp"/>
 
         <Button
             android:id="@+id/gotoDashboard"
@@ -92,14 +95,14 @@
             android:layout_marginBottom="10dp"
             android:background="#000"
             android:backgroundTint="#070707"
-            android:text="@string/go"
+            android:text="@string/log_in"
             android:textColor="#fff"
             android:fontFamily="@font/antic"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/loginToSignUp"
-            android:layout_width="120dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
@@ -108,7 +111,8 @@
             android:text="@string/new_user_signup"
             android:textColor="#000"
             android:textStyle="bold"
-            android:fontFamily="@font/antic"/>
+            android:fontFamily="@font/antic"
+            android:textSize="16sp"/>
 
 
     </LinearLayout>

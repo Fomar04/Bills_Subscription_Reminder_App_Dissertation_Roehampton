@@ -74,7 +74,7 @@ public class Bills extends AppCompatActivity {
                     String id = result.getId();
 
 
-                    bills_list.add(new Billable(description, date, amount,id));
+                    bills_list.add(new Billable(description, date, amount, id));
                     setAdapter();
                 }
             }

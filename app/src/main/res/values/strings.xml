@@ -44,5 +44,6 @@
     <string name="notify_title">Notify Title</string>
     <string name="schedule_notification">Schedule Notification</string>
     <string name="provider">Provider</string>
+    <string name="log_in">Log in</string>
 
 </resources>

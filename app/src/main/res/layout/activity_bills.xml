@@ -20,12 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_toEndOf="@id/image_back"
-        android:fontFamily="@font/antic"
+        android:fontFamily="@font/archivo_black"
         android:padding="5dp"
         android:text="@string/my_bills"
         android:textColor="#000000"
         android:textSize="32sp"
-        android:textStyle="bold"
         tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView

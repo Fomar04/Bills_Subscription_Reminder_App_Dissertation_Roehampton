@@ -113,7 +113,7 @@
                 android:id="@+id/addSSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Bill"
+                android:text="Add Subscription"
                 android:backgroundTint="#000000"
                 android:textColor="#ffffff"
                 android:fontFamily="@font/antic"

@@ -30,7 +30,7 @@
             android:fontFamily="@font/antic"
             android:hint="@string/notify_title"
             android:inputType="textPersonName"
-            android:text="@string/your_bill"
+            android:text="Your due date is in 2 days"
             android:textSize="20sp"
             tools:ignore="LabelFor"
             android:autofillHints="" />

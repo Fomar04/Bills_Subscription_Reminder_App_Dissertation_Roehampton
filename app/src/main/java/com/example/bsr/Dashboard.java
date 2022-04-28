@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,7 +43,11 @@ public class Dashboard extends AppCompatActivity {
             //When we exit we don't want data to persist
             Session.authenticatedUser = null;
             Session.userData = null;
-           finish();
+
+            Intent intent =  new Intent(this, Login.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
         });
 
         cardChart.setOnClickListener(view -> {
@@ -64,7 +67,8 @@ public class Dashboard extends AppCompatActivity {
 
         });
 
-      }
+
+    }
 
 
 }
